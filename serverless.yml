@@ -1,0 +1,32 @@
+org: jazminjahaziel
+app: aws-node-test
+service: aws-node-test-dos
+
+plugins:
+  - serverless-iam-roles-per-function
+
+frameworkVersion: '2'
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  enviarMensaje:
+    handler: handler.enviarMensaje
+    iamRoleStatementsName: my-custom-role-name #optional custom role name setting instead of the default generated one
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - events:PutEvents
+        Resource: "arn:aws:events:us-east-1:193024568733:event-bus/test"
+  mostrarConsola:
+    handler: handler-dos.mostrarConsola
+    events:
+     - eventBridge:
+        eventBus: test 
+        pattern:
+           source:
+             - mensajeTest
