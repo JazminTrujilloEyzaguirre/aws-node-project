@@ -1,0 +1,26 @@
+{
+    "version": "0",
+    "id": "46b2e9bb-9fd6-16d9-37fc-5efc9e961573",
+    "detail-type": "UserSignUp",
+    "source": "mensajeTest",
+    "account": "193024568733",
+    "time": "2021-07-21T18:26:12Z",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+        "personas": [
+            {
+                "nombre": "Gustavo",
+                "edad": "25"
+            },
+            {
+                "nombre": "Leo",
+                "edad": "27"
+            },
+            {
+                "nombre": "Carmen",
+                "edad": "18"
+            }
+        ]
+    }
+}
